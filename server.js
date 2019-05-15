@@ -22,6 +22,8 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.send('index route working');
 });
+const petsController = require('./controllers/pets.js');
+app.use('/pets', petsController);
 
 app.listen(3000, () => {
     console.log('listening on port 3000....');

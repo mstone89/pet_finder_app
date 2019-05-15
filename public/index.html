@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="PetFinderApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pet Finder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="MainController as ctrl">
+    <div>
+        <h1>Pet Finder App</h1>
+        <form ng-submit="ctrl.createPet()">
+            Name: <input type="text" ng-model="ctrl.createForm.name"/>
+            Species: <input type="text" ng-model="ctrl.createForm.species"/>
+            Breed: <input type="text" ng-model="ctrl.createForm.breed"/>
+            Age: <input type="number" ng-model="ctrl.createForm.age"/>
+            Adopted: <input type="checkbox" ng-model="ctrl.createForm.adopted"/>
+            <input type="submit" value="Create New Pet"/>
+        </form>
+    </div>
+</body>
+</html>

@@ -20,7 +20,6 @@
             Adopted: <input type="checkbox" ng-model="ctrl.createForm.adopted"/>
             <input type="submit" value="Create New Pet"/>
         </form>
-
     </div>
     <ul ng-repeat="pet in ctrl.pets">
       <li>
@@ -29,6 +28,7 @@
       Breed: {{ pet.breed }}
       Age: {{pet.age }}
       Adopted: {{ pet.adopted }}
+      <button ng-click="ctrl.deletePet(pet._id)">Delete</button>
       </li>
     </ul>
 </body>

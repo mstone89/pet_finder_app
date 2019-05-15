@@ -4,6 +4,21 @@ app.controller('MainController', ['$http', function($http) {
 // const controller = this;
     this.createForm = {};
 
+    this.deletePet = (id) => {
+        $http({
+            method: 'DELETE',
+            url: '/pets/' + id
+        }).then((response) => {
+            const removeByIndex = this.pets.findIndex((pet) => {
+                pet._id === id
+            });
+            this.pets.splice(removeByIndex, 1);
+            console.log(response.data);
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
     this.createPet = () => {
         $http({
             method: 'POST',
@@ -17,6 +32,7 @@ app.controller('MainController', ['$http', function($http) {
             console.log(error);
         });
     }
+
     this.getPets = () => {
       $http({
         method: 'GET',

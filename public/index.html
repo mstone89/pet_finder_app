@@ -20,6 +20,16 @@
             Adopted: <input type="checkbox" ng-model="ctrl.createForm.adopted"/>
             <input type="submit" value="Create New Pet"/>
         </form>
+
     </div>
+    <ul ng-repeat="pet in ctrl.pets">
+      <li>
+      Pet Name:{{ pet.name }}
+      Species: {{ pet.species }}
+      Breed: {{ pet.breed }}
+      Age: {{pet.age }}
+      Adopted: {{ pet.adopted }}
+      </li>
+    </ul>
 </body>
 </html>

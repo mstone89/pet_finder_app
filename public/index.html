@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai" rel="stylesheet">
 </head>
 <body ng-controller="MainController as ctrl">
     <div class ="container">
+      <header>
         <h1>Pet Finder App</h1>
+      </header>
+      <h2> Find Your Perfect Partner </h2>
         <form ng-submit="ctrl.createPet()">
             Name: <input type="text" ng-model="ctrl.createForm.name"/>
             Species: <input type="text" ng-model="ctrl.createForm.species"/>
@@ -25,12 +29,12 @@
     </div>
     <ul ng-repeat="pet in ctrl.pets">
       <li>
-      <span>Pet Name:</span>{{ pet.name }}
-      <span>Species:</span> {{ pet.species }}
-      <span>Breed:</span> {{ pet.breed }}
-      <span>Age:</span>{{pet.age }}
-      <span>Adopted:</span>{{ pet.adopted }}
-      <a href="#" ng-click="ctrl.index = $index"><button>Edit</button></a>
+      <h5>Pet Name:</h5> <span>{{ pet.name }}</span>
+      <h5>Species:</h5> <span>{{ pet.species }}</span>
+      <h5>Breed:</h5> <span>{{ pet.breed }}</span>
+      <h5>Age:</h5><span>{{pet.age }}</span>
+      <h5>Adopted:</h5><span>{{ pet.adopted }}</span>
+      <a href="" ng-click="ctrl.index = $index"><button>Edit</button></a>
       <button ng-click="ctrl.deletePet(pet._id)">Delete</button>
       <form ng-if="$index === ctrl.index" ng-submit="ctrl.updatePet(pet)">
           Name: <input type="text" ng-model="ctrl.updatedName"/>

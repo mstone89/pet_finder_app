@@ -28,7 +28,16 @@
       Breed: {{ pet.breed }}
       Age: {{pet.age }}
       Adopted: {{ pet.adopted }}
+      <a href="#" ng-click="ctrl.index = $index"><button>Edit</button></a>
       <button ng-click="ctrl.deletePet(pet._id)">Delete</button>
+      <form ng-if="$index === ctrl.index" ng-submit="ctrl.updatePet(pet)">
+          Name: <input type="text" ng-model="ctrl.updatedName"/>
+          Species: <input type="text" ng-model="ctrl.updatedSpecies"/>
+          Breed: <input type="text" ng-model="ctrl.updatedBreed"/>
+          Age: <input type="number" ng-model="ctrl.updatedAge"/>
+          Adopted: <input type="checkbox" ng-model="ctrl.updatedAdopted"/>
+          <input type="submit" value="Update Pet"/>
+      </form>
       </li>
     </ul>
 </body>

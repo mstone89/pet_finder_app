@@ -4,6 +4,27 @@ app.controller('MainController', ['$http', function($http) {
 // const controller = this;
     this.createForm = {};
 
+    this.index = null;
+
+    this.updatePet = (pet) => {
+        $http({
+            method: 'PUT',
+            url: '/pets/' + pet._id,
+            data: {
+                name: this.updatedName,
+                species: this.updatedSpecies,
+                breed: this.updatedBreed,
+                age: this.updatedAge,
+                adopted: this.updatedAdopted
+            }
+        }).then((response) => {
+            this.getPets();
+            console.log(response.data);
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
     this.deletePet = (id) => {
         $http({
             method: 'DELETE',

@@ -1,0 +1,14 @@
+body{
+background-color: silver;
+color: forestgreen;
+text-align: center;
+}
+button {
+  background-color: forestgreen;
+  color: silver;
+}
+span{
+  color: royalblue;
+  text-transform: uppercase;
+  font-weight: bold;
+}

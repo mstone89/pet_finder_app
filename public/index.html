@@ -7,10 +7,12 @@
     <title>Pet Finder</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="MainController as ctrl">
-    <div>
+    <div class ="container">
         <h1>Pet Finder App</h1>
         <form ng-submit="ctrl.createPet()">
             Name: <input type="text" ng-model="ctrl.createForm.name"/>
@@ -24,11 +26,11 @@
     </div>
     <ul ng-repeat="pet in ctrl.pets">
       <li>
-      Pet Name:{{ pet.name }}
-      Species: {{ pet.species }}
-      Breed: {{ pet.breed }}
-      Age: {{pet.age }}
-      Adopted: {{ pet.adopted }}
+      <span>Pet Name:</span> {{ pet.name }}
+      <span>Species:</span> {{ pet.species }}
+      <span>Breed:</span> {{ pet.breed }}
+      <span>Age:</span> {{pet.age }}
+      <span>Adopted:</span>{{ pet.adopted }}
       </li>
     </ul>
 </body>

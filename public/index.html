@@ -25,11 +25,11 @@
     </div>
     <ul ng-repeat="pet in ctrl.pets">
       <li>
-      Pet Name:{{ pet.name }}
-      Species: {{ pet.species }}
-      Breed: {{ pet.breed }}
-      Age: {{pet.age }}
-      Adopted: {{ pet.adopted }}
+      <span>Pet Name:</span>{{ pet.name }}
+      <span>Species:</span> {{ pet.species }}
+      <span>Breed:</span> {{ pet.breed }}
+      <span>Age:</span>{{pet.age }}
+      <span>Adopted:</span>{{ pet.adopted }}
       <a href="#" ng-click="ctrl.index = $index"><button>Edit</button></a>
       <button ng-click="ctrl.deletePet(pet._id)">Delete</button>
       <form ng-if="$index === ctrl.index" ng-submit="ctrl.updatePet(pet)">

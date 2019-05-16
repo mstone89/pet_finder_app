@@ -19,6 +19,7 @@ app.controller('MainController', ['$http', function($http) {
             }
         }).then((response) => {
             this.getPets();
+            this.index = null;
             console.log(response.data);
         }, (error) => {
             console.log(error);
